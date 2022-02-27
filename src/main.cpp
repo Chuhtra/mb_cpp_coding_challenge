@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "intent.h"
+
 
 using namespace std;
 
@@ -14,6 +16,7 @@ int main(){
         if(input == "X"){
             break;
         }else{
+            Intent * i = new Intent(input);
         //TODO
         }
     }    

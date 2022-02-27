@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # create project
 project(SmallIntentRecognizer VERSION 0.1)
 
-add_executable(recognizer src/main.cpp)
+file(GLOB SOURCES CONFIGURE_DEPENDS src/*.cpp)
+add_executable(recognizer ${SOURCES})
