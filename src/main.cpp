@@ -25,9 +25,14 @@ int main(){
 
             string formed_intent = intent_processor.retrieve_intents(i->get_prompt());
 
+            if(formed_intent == ""){
+              cout << "Unknown request. Please try again." << endl;
+              continue;
+            }
+
             i->set_intent(formed_intent);
 
-            cout << i->get_intent() << endl;
+            cout << i->get_intent() << endl << endl;
 
         }
     }    
