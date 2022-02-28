@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
 #include <string>
+#include<sstream>
 #include <algorithm>
-
-#include "topic.h"
+#include <iterator>
+#include <map>
 
 using namespace std;
 class IntentProcessor{
@@ -14,11 +15,12 @@ class IntentProcessor{
         string retrieve_intents(const string& text);
 
     private:
-        vector<Topic> topic_of_interest {
-                                        Topic("weather"), 
-                                        Topic("price"), 
-                                        Topic("fact"),
-                                        Topic("Paris", "City"),
-                                        Topic("Berlin", "City")
-                                        };
+        map<string, string> topics_of_interest {{"weather", "-"}, 
+                                                {"price", "-"}, 
+                                                {"fact", "-"},
+                                                {"paris", "City"},
+                                                {"berlin", "City"}
+                                                };
+
+        bool use_pos_tagging{false};
 };
