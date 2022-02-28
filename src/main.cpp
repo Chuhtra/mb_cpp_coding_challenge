@@ -14,7 +14,6 @@ int main(){
         cout << "Enter prompt: " ;
         string input;
         getline(cin,input);
-        cout << input << endl;
 
         if(input == "X"){
             break;
@@ -31,7 +30,7 @@ int main(){
             }
 
             i->set_intent(formed_intent);
-            
+
             cout << i->get_intent() << endl << endl;
 
         }

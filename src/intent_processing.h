@@ -1,13 +1,14 @@
 #pragma once
 #include <vector>
 #include <string>
-#include<sstream>
+#include <sstream>
 #include <algorithm>
 #include <iterator>
 #include <map>
 
 using namespace std;
 class IntentProcessor{
+    // Class to include input and intent processing functions, as well as needed information stores.
     public:
         IntentProcessor() = default;
 
