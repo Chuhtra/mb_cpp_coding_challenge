@@ -13,6 +13,7 @@ class IntentProcessor{
 
         void intent_preproccessing(string& text);
         string retrieve_intents(const string& text);
+        static vector<string> split_string(const string& text);
 
     private:
         map<string, string> topics_of_interest {{"weather", "-"}, 

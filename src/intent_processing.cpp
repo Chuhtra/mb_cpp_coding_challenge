@@ -7,7 +7,7 @@ void IntentProcessor::intent_preproccessing(string& text){
     text.erase(remove_if(text.begin (), text.end (), ::ispunct), text.end ());
 }
 
-vector<string> split_string(const string& text){
+vector<string> IntentProcessor::split_string(const string& text){
     istringstream iss(text);
     vector<string> tokens {istream_iterator<string>{iss},
                     istream_iterator<string>{}};
