@@ -17,10 +17,12 @@ class IntentProcessor{
         static vector<string> split_string(const string& text);
 
     private:
-        map<string, string> topics_of_interest {{"weather", "-"}, 
-                                                {"price", "-"}, 
-                                                {"fact", "-"},
-                                                {"paris", "City"},
-                                                {"berlin", "City"}
+        string tag_simple_topic = "-";
+        string tag_city = "City";
+        map<string, string> topics_of_interest {{"weather", tag_simple_topic}, 
+                                                {"price", tag_simple_topic}, 
+                                                {"fact", tag_simple_topic},
+                                                {"paris", tag_city},
+                                                {"berlin", tag_city}
                                                 };
 };
