@@ -21,6 +21,4 @@ class IntentProcessor{
                                                 {"paris", "City"},
                                                 {"berlin", "City"}
                                                 };
-
-        bool use_pos_tagging{false};
 };

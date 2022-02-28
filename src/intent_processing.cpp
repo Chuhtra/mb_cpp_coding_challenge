@@ -17,21 +17,17 @@ vector<string> split_string(const string& text){
 string IntentProcessor::retrieve_intents(const string& text){
     string result{};
     bool unknown_intent{true};
-    if(use_pos_tagging){
-        //TODO spacy-cpp or other
-    }else{
-        vector<string> tokens = split_string(text);
+    vector<string> tokens = split_string(text);
 
-        for(string token : tokens){
-            string tag = topics_of_interest[token];
-            if(tag != ""){
-                if(tag == "-"){
-                    tag = token;
-                }
-                tag[0] = toupper( tag[0] );
-                result += tag + " ";
-                if(unknown_intent) unknown_intent = false;
+    for(string token : tokens){
+        string tag = topics_of_interest[token];
+        if(tag != ""){
+            if(tag == "-"){
+                tag = token;
             }
+            tag[0] = toupper( tag[0] );
+            result += tag + " ";
+            if(unknown_intent) unknown_intent = false;
         }
     }
     if(unknown_intent){ 
