@@ -11,6 +11,6 @@ string Intent::get_intent(){
 string Intent::get_prompt(){ 
     return this->prompt;
 }
-void Intent::set_intent(vector<string> const parts){
-    for (const auto &piece : parts) this->intent += piece + " ";
+void Intent::set_intent(const string& text){
+    this->intent += text;
 }

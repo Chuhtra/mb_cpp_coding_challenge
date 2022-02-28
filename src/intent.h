@@ -6,7 +6,7 @@
 using namespace std;
 class Intent{
     string prompt{};
-    string intent{"Intent: "};
+    string intent{"Intent: Get "};
 
 public:
     Intent(const string&);
@@ -14,5 +14,5 @@ public:
     string get_intent();
     string get_prompt();
 
-    void set_intent(vector<string> parts);
+    void set_intent(const string&);
 };
