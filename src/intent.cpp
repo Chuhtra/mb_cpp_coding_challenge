@@ -1,7 +1,7 @@
 #include "intent.h"
 #include <string_view>
 
-Intent::Intent(const std::string& prompt){
+Intent::Intent(const string& prompt){
     this->prompt=prompt;
 }
 

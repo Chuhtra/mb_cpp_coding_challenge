@@ -16,6 +16,7 @@ vector<string> split_string(const string& text){
 
 string IntentProcessor::retrieve_intents(const string& text){
     string result{};
+    bool unknown_intent{true};
     if(use_pos_tagging){
         //TODO spacy-cpp or other
     }else{
@@ -29,10 +30,15 @@ string IntentProcessor::retrieve_intents(const string& text){
                 }
                 tag[0] = toupper( tag[0] );
                 result += tag + " ";
+                if(unknown_intent) unknown_intent = false;
             }
         }
 
         result.back() = '.';
     }
-    return result;
+    if(unknown_intent){ 
+        return "unknown";
+    }else{
+        return result;
+    }
 }
