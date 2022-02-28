@@ -33,12 +33,11 @@ string IntentProcessor::retrieve_intents(const string& text){
                 if(unknown_intent) unknown_intent = false;
             }
         }
-
-        result.back() = '.';
     }
     if(unknown_intent){ 
         return "unknown";
     }else{
+        result.back() = '.';
         return result;
     }
 }
