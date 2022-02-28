@@ -33,6 +33,8 @@ int main(){
 
             cout << i->get_intent() << endl << endl;
 
+            delete i;
+            i = nullptr;
         }
     }    
 } 
