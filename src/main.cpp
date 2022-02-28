@@ -24,14 +24,14 @@ int main(){
             Intent * i = new Intent(input);
 
             string formed_intent = intent_processor.retrieve_intents(i->get_prompt());
-
+            
             if(formed_intent == "unknown"){
                 cout << "Unknown request. Please try again.\n" << endl;
                 continue;
             }
 
             i->set_intent(formed_intent);
-
+            
             cout << i->get_intent() << endl << endl;
 
         }

@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # create project
 project(SmallIntentRecognizer VERSION 0.1)
 
-file(GLOB SOURCES CONFIGURE_DEPENDS src/*.cpp)
-add_executable(recognizer ${SOURCES})
+file(GLOB SOURCES CONFIGURE_DEPENDS src/intent*.cpp)
+add_executable(recognizer src/main.cpp ${SOURCES})
 
 # add unit testing through gtests
 
@@ -22,6 +22,7 @@ enable_testing()
 add_executable(
   tests
   tests/tests.cpp
+  ${SOURCES}
 )
 target_link_libraries(
   tests
