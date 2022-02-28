@@ -11,13 +11,14 @@ class IntentProcessor{
         IntentProcessor() = default;
 
         void intent_preproccessing(string& text);
+        string retrieve_intents(const string& text);
 
     private:
         vector<Topic> topic_of_interest {
-                Topic("weather"), 
-                Topic("price"), 
-                Topic("fact"),
-                Topic("Paris", "City"),
-                Topic("Berlin", "City")
-                };
+                                        Topic("weather"), 
+                                        Topic("price"), 
+                                        Topic("fact"),
+                                        Topic("Paris", "City"),
+                                        Topic("Berlin", "City")
+                                        };
 };

@@ -16,13 +16,19 @@ int main(){
         getline(cin,input);
         cout << input << endl;
 
-        intent_processor.intent_preproccessing(input);
-
         if(input == "X"){
             break;
         }else{
+            intent_processor.intent_preproccessing(input);
+
             Intent * i = new Intent(input);
-        //TODO
+
+            string formed_intent = intent_processor.retrieve_intents(i->get_prompt());
+
+            i->set_intent(formed_intent);
+
+            cout << i->get_intent() << endl;
+
         }
     }    
 } 
