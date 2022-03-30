@@ -26,6 +26,9 @@ int main(){
             
             if(formed_intent == "unknown"){
                 cout << "Unknown request. Please try again.\n" << endl;
+                delete i;
+                i = nullptr;
+                
                 continue;
             }
 
